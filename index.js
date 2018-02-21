@@ -11,21 +11,18 @@ program
 var host = program.host
 var realm = program.realm
 
-var url = host + '/auth/realms/' + realm + '/protocol/openid-connect/certs'
-
 function log (key, value) {
   process.stdout.write(key + ': ' + value + '\n')
 }
 
 function fetch (keycloakUrl) {
   request(keycloakUrl, function (error, response, body) {
-    log('ERROR', error)
-    log('CODE', response.statusCode)
+    // log('ERROR', error)
+    // log('CODE', response.statusCode)
     if (!error && response.statusCode === 200) {
-      var jsonbody = JSON.parse(body)
-      var keys = jsonbody.keys
-      log('KEYS', keys)
-      if (keys!==undefined) {
+      var keys = JSON.parse(body).keys
+      log('KEY', keys[0])
+      if (keys !== undefined) {
         var jwk = keys[0]
         var pem = jwkToPem(jwk)
         log('PEM', pem)
@@ -36,4 +33,10 @@ function fetch (keycloakUrl) {
     return {body: body, error: error}
   })
 }
-var result = fetch(url)
+
+if (host === undefined || realm === undefined) {
+  log('ERROR', 'No host or realm defined')
+} else {
+  var url = host + '/auth/realms/' + realm + '/protocol/openid-connect/certs'
+  fetch(url)
+}
