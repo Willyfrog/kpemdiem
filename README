@@ -1,0 +1,17 @@
+# kpemdiem
+
+simple utility to get a keycloak public certificate and show it either in jwk form or pem form
+
+It's quite basic and it might fail in many unexpected ways, so feel free to clone and improve it.
+
+## USE
+
+node ./index.js --host "http://myhost" --realm "master"
+PEM: -----BEGIN RSA PUBLIC KEY-----
+MIIBCgKCAQEAps4uhBYIqZMOnbIYvSJrdRCyNYtMqooVBUatYHb8b3BjknTJ8nra
+9hMZmZo9Pt7gh39MKVNq1UZ+EIDbz4siyylAnmf0bf9pTSsOlXiuHecYYBwNU8tc
+08MXZZwMafNldmOuvisY4gFgSJlQpPNgVxZg7/tDvH5hRZfI/LUGCed8h4eaMZtg
+3AyiP6fvJeoCDuuD1Z586Jl7WjSFCG+TL9F0iLoH02smCrOJS7Dspf5Zk1syn5Zn
+ChsjcEdwdQzoQTzO0JpsL+PcMbpF0vwwz2yul3WVM+jz7d0XY0zDWW3Dqr9+DIec
+X/OZOJOfdCV9TqmacRumluCewIkc9Ni8dQIDAQAB
+-----END RSA PUBLIC KEY-----

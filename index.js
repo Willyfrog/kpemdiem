@@ -21,7 +21,7 @@ function fetch (keycloakUrl) {
     // log('CODE', response.statusCode)
     if (!error && response.statusCode === 200) {
       var keys = JSON.parse(body).keys
-      log('KEY', keys[0])
+      // log('KEY', keys[0])
       if (keys !== undefined) {
         var jwk = keys[0]
         var pem = jwkToPem(jwk)
