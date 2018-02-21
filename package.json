@@ -1,0 +1,14 @@
+{
+  "name": "kpemdiem",
+  "version": "1.0.0",
+  "description": "Fetch keycloak jwk and convert it to PEM",
+  "main": "index.js",
+  "repository": "https://github.com/Willyfrog/kpemdiem.git",
+  "author": "Willyfrog",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "jsonwebtoken": "^8.1.1",
+    "jwk-to-pem": "^1.2.6"
+  }
+}
